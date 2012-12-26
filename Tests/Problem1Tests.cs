@@ -23,6 +23,7 @@ namespace Tests {
         public object[][] GetLimitAndExpectedSumOfMultiplesOf3And5 () {
             var data = new object[][] {
                 new object[] { 10, 23 },
+                new object[] { 1000, 233168 },
             };
 
             return data;
