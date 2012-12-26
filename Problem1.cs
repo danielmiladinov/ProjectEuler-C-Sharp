@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 
 namespace ProjectEuler {
-    class Program {
-        static void Main (string[] args) {
-        }
+    public class Problem1 {
     }
 }

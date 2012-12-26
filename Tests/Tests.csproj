@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9763A915-E5DC-4CBC-8CF3-EE7E5CF1ACB2}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{AFEF6E69-A01C-459A-8B43-A3A52C4D786F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProjectEuler</RootNamespace>
-    <AssemblyName>ProjectEuler</AssemblyName>
+    <RootNamespace>Tests</RootNamespace>
+    <AssemblyName>Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -33,10 +33,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit-console-runner">
+      <HintPath>NUnit\nunit-console-runner.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.5.10.11092, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>NUnit\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,8 +50,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Problem1.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Problem1Tests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NUnit\nunit-console-runner.dll" />
+    <None Include="NUnit\nunit.framework.dll" />
+    <None Include="NUnit\nunit.mocks.dll" />
+    <None Include="NUnit\nunit.util.dll" />
+    <None Include="NUnit\nunit.core.interfaces.dll" />
+    <None Include="NUnit\nunit.core.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectEuler.csproj">
+      <Project>{9763A915-E5DC-4CBC-8CF3-EE7E5CF1ACB2}</Project>
+      <Name>ProjectEuler</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
