@@ -17,7 +17,7 @@ namespace Tests {
 
         [TestCaseSource("GetLimitAndExpectedSumOfMultiplesOf3And5")]
         public void ShouldGetTheCorrectAnswer (int limit, int expectedSum) {
-            Assert.AreEqual(expectedSum, problem.getSumOfMultiplesOf3And5Below(limit));
+            Assert.AreEqual(expectedSum, problem.getSumOfMultiplesOf3Or5Below(limit));
         }
 
         public object[][] GetLimitAndExpectedSumOfMultiplesOf3And5 () {
