@@ -21,9 +21,15 @@ namespace Tests {
             );
         }
 
-        [Test]
-        public void ShouldReturnTheCorrectLargestPrimeFactor () {
-            Assert.AreEqual(29, problem.LargestPrimeFactorOf(13195));
+        [TestCaseSource("GetNumbersAndTheirExpectedLargestPrimeFactors")]
+        public void ShouldReturnTheCorrectLargestPrimeFactor (int number, int expectedLargestPrimeFactor) {
+            Assert.AreEqual(expectedLargestPrimeFactor, problem.LargestPrimeFactorOf(number));
+        }
+
+        public static int[][] GetNumbersAndTheirExpectedLargestPrimeFactors () {
+            return new int[][] {
+                new int[] { 13195, 29, },
+            };
         }
     }
 }
