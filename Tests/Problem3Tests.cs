@@ -20,5 +20,10 @@ namespace Tests {
                 problem.PrimeFactorsOf(13195)
             );
         }
+
+        [Test]
+        public void ShouldReturnTheCorrectLargestPrimeFactor () {
+            Assert.AreEqual(29, problem.LargestPrimeFactorOf(13195));
+        }
     }
 }

@@ -10,6 +10,10 @@ namespace ProjectEuler {
                 x => (x.IsPrime()) && (number % x == 0)
             ).ToList();
         }
+
+        public int LargestPrimeFactorOf (int number) {
+            return PrimeFactorsOf(number).Max();
+        }
     }
 
     public static class IntExtensions {
