@@ -5,32 +5,38 @@ using System.Text;
 
 namespace ProjectEuler {
     public class Problem3 {
-        public List<int> PrimeFactorsOf (int number) {
-            return Enumerable.Range(1, number - 1).Where(
+        public List<long> PrimeFactorsOf (long number) {
+            return LongExtensions.Range(1, number - 1).Where(
                 x => (x.IsPrime()) && (number % x == 0)
             ).ToList();
         }
 
-        public int LargestPrimeFactorOf (int number) {
+        public long LargestPrimeFactorOf (long number) {
             return PrimeFactorsOf(number).Max();
         }
     }
 
-    public static class IntExtensions {
-        public static bool IsPrime (this int number) {
+    public static class LongExtensions {
+        public static bool IsPrime (this long number) {
             if ((number % 2) == 0) {
                 return number == 2;
             }
 
-            int sqrt = (int)Math.Sqrt(number);
+            long sqrt = (long)Math.Sqrt(number);
 
-            for (int t = 3; t <= sqrt; t = t + 2) {
+            for (long t = 3; t <= sqrt; t = t + 2) {
                 if (number % t == 0) {
                     return false;
                 }
             }
 
             return number != 1;
+        }
+
+        public static IEnumerable<long> Range (long start, long stop) {
+            for (long i = start; i <= stop; i++) {
+                yield return i;
+            }
         }
     }
 }

@@ -16,19 +16,19 @@ namespace Tests {
         public void ShouldReturnCorrectListOfPrimeFactors () {
             // The prime factors of 13195 are 5, 7, 13 and 29.
             CollectionAssert.AreEqual(
-                new List<int>() { 5, 7, 13, 29 },
+                new List<long>() { 5, 7, 13, 29 },
                 problem.PrimeFactorsOf(13195)
             );
         }
 
         [TestCaseSource("GetNumbersAndTheirExpectedLargestPrimeFactors")]
-        public void ShouldReturnTheCorrectLargestPrimeFactor (int number, int expectedLargestPrimeFactor) {
+        public void ShouldReturnTheCorrectLargestPrimeFactor (long number, long expectedLargestPrimeFactor) {
             Assert.AreEqual(expectedLargestPrimeFactor, problem.LargestPrimeFactorOf(number));
         }
 
-        public static int[][] GetNumbersAndTheirExpectedLargestPrimeFactors () {
-            return new int[][] {
-                new int[] { 13195, 29, },
+        public static long[][] GetNumbersAndTheirExpectedLargestPrimeFactors () {
+            return new long[][] {
+                new long[] { 13195, 29, },
             };
         }
     }
