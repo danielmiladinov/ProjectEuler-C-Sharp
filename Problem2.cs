@@ -11,13 +11,13 @@ namespace ProjectEuler {
         }
         
         private static IEnumerable<long> FibonacciSequence (long numberOfTerms) {
-            long firstTerm = 0, previousTerm = 0, nextTerm = 1;
+            long currentTerm = 0, previousTerm = 0, nextTerm = 1;
 
             do {
-                yield return firstTerm;
+                yield return currentTerm;
 
-                previousTerm = firstTerm;
-                firstTerm = nextTerm;
+                previousTerm = currentTerm;
+                currentTerm = nextTerm;
                 nextTerm = previousTerm + nextTerm;
             } while (--numberOfTerms > 0);
         }
