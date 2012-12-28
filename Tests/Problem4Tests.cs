@@ -23,6 +23,7 @@ namespace Tests {
         public object[][] getNumbersOfDigitsAndExpectedLargestPalindromicProduct () {
             return new object[][] {
                 new object[] { 2, 9009, },
+                new object[] { 3, 906609, },
             };
         }
 
