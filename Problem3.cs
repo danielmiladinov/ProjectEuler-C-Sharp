@@ -5,12 +5,6 @@ using System.Text;
 
 namespace ProjectEuler {
     public class Problem3 {
-        public List<long> PrimeFactorsOf (long number) {
-            return LongExtensions.Range(1, number - 1).Where(
-                x => (x.IsPrime()) && (number % x == 0)
-            ).ToList();
-        }
-
         public long LargestPrimeFactorOf (long number) {
             return PrimeFactorsOf(number).Max();
         }
@@ -31,12 +25,6 @@ namespace ProjectEuler {
             }
 
             return number != 1;
-        }
-
-        public static IEnumerable<long> Range (long start, long stop) {
-            for (long i = start; i <= stop; i++) {
-                yield return i;
-            }
         }
     }
 }
