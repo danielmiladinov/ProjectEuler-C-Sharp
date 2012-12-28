@@ -20,6 +20,7 @@ namespace Tests {
         public static long[][] GetNumbersAndTheirExpectedLargestPrimeFactors () {
             return new long[][] {
                 new long[] { 13195, 29, },
+                new long[] { 600851475143, 6857 },
             };
         }
     }
