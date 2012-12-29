@@ -16,7 +16,7 @@ namespace Tests {
         }
 
         [TestCaseSource("GetSomeNumbersAndTheirExpectedFactorials")]
-        public void ShouldReturnTheCorrectFactorials (int number, int expectedFactorial) {
+        public void ShouldReturnTheCorrectFactorials (long number, long expectedFactorial) {
             Assert.AreEqual(expectedFactorial, number.Factorial());
         }
 
