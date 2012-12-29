@@ -43,6 +43,7 @@ namespace Tests {
         public static object[][] GetExpectedSmallestNumbersAndTheirLargestConsecutiveDivisors () {
             return new object[][] {
                 new object[] { 2520, 10, },
+                new object[] { 232792560, 20, },
             };
         }
     }
