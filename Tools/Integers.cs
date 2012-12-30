@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace ProjectEuler {
+namespace ProjectEuler.Tools {
     public static class Integers {
         public static IEnumerable<int> DescendingRange (int start, int stop) {
             for (int i = start; i >= stop; i--) {

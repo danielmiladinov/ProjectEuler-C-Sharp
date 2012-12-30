@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ProjectEuler;
+using ProjectEuler.Tools;
 using NUnit.Framework;
 
 namespace Tests {

@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Integers.cs" />
+    <Compile Include="Tools\Integers.cs" />
     <Compile Include="Problem1.cs" />
     <Compile Include="Problem2.cs" />
     <Compile Include="Problem3.cs" />
