@@ -39,6 +39,7 @@ namespace ProjectEuler.Tools {
 
         public long BaseValue { get { return baseValue; } }
         public long ExponentValue { get { return exponentValue; } }
+        public long LongValue { get { return (long)Math.Pow(baseValue, exponentValue); } }
 
         public PrimeFactor (long prime)
             : this() {

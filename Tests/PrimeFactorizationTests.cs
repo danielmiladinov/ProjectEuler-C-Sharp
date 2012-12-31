@@ -54,5 +54,20 @@ namespace Tests {
                 },
             };
         }
+
+        [TestCaseSource("GetSomePrimeFactorsAndTheirExpectedLongValues")]
+        public void PrimeFactorsShouldReturnTheCorrectLongValues (PrimeFactor factor, long expected) {
+            Assert.AreEqual(expected, factor.LongValue);
+        }
+
+        public object[][] GetSomePrimeFactorsAndTheirExpectedLongValues () {
+            return new object[][] {
+                new object[] { new PrimeFactor(2, 3), 8, },
+                new object[] { new PrimeFactor(5), 5, },
+                new object[] { new PrimeFactor(5, 2), 25, },
+                new object[] { new PrimeFactor(10, 2), 100, },
+                new object[] { new PrimeFactor(2, 32), 4294967296, },
+            };
+        }
     }
 }
