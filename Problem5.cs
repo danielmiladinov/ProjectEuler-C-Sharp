@@ -7,18 +7,30 @@ using ProjectEuler.Tools;
 namespace ProjectEuler {
     public class Problem5 {
         public long GetSmallestNumberDivisibleByAllNumbersUpTo (long largestConsecutiveDivisor) {
-            var candidates = Longs.Range(
-                largestConsecutiveDivisor,
-                largestConsecutiveDivisor.Factorial() - largestConsecutiveDivisor
+            var primesOfGreatestPower = new Dictionary<long, PrimeFactor>();
+
+            Longs.Range(2, largestConsecutiveDivisor - 2).Select(
+                x => PrimeFactorization.Of(x)
+            ).ToList().ForEach(
+                factors => factors.ForEach(
+                    factor => {
+                        if (primesOfGreatestPower.ContainsKey(factor.BaseValue)) {
+                            var currentFactor = primesOfGreatestPower[factor.BaseValue];
+                            primesOfGreatestPower[factor.BaseValue] = (
+                                currentFactor.ExponentValue > factor.ExponentValue ?
+                                currentFactor :
+                                factor
+                            );
+                        } else {
+                            primesOfGreatestPower.Add(factor.BaseValue, factor);
+                        }
+                    }
+                )
             );
 
-            var divisors = Longs.Range(2, largestConsecutiveDivisor - 2);
-
-            var results = from candidate in candidates
-                          where divisors.All(divisor => candidate.DivisibleBy(divisor))
-                          select candidate;
-
-            return results.FirstOrDefault();
+            return primesOfGreatestPower.Select(
+                factorByBaseValue => factorByBaseValue.Value.LongValue
+            ).Aggregate((x, y) => x * y);
         }
     }
 }
