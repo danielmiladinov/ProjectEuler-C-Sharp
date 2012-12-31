@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using ProjectEuler;
-using System.Collections.Generic;
 
 namespace Tests {
     [TestFixture]
