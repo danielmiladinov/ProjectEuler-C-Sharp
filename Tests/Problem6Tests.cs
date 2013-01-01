@@ -25,5 +25,10 @@ namespace Tests {
         public void DifferenceOfTheSquareOfTheSumsAndTheSumOfTheSquaresOfTheFirstTenNaturalNumbers () {
             Assert.AreEqual(2640, problem.SquareOfTheSumsFromOneTo(10) - problem.SumOfTheSquaresFromOneTo(10));
         }
+
+        [Test]
+        public void DifferenceOfTheSuqareOfTheSumsAndTheSumOfTheSquaresOfTheFirstOneHundredNaturalNumbers () {
+            Assert.AreEqual(25164150, problem.SquareOfTheSumsFromOneTo(100) - problem.SumOfTheSquaresFromOneTo(100));
+        }
     }
 }
