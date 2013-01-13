@@ -9,6 +9,10 @@ namespace ProjectEuler.Tools {
             }
         }
 
+        public static bool IsEven (this int candidate) {
+            return candidate % 2 == 0;
+        }
+
         public static bool IsPalindromic (this int candidate) {
             string forwards = candidate.ToString();
             char[] digits = forwards.ToCharArray();

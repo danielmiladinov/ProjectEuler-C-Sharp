@@ -49,6 +49,7 @@
     <Compile Include="Problem6.cs" />
     <Compile Include="Problem7.cs" />
     <Compile Include="Problem8.cs" />
+    <Compile Include="Problem9.cs" />
     <Compile Include="Tools\Integers.cs" />
     <Compile Include="Problem1.cs" />
     <Compile Include="Problem2.cs" />
