@@ -16,11 +16,12 @@ namespace ProjectEuler {
                     };
 
                     var products = new List<int>();
+                    Func<int, int, int> multiplication = (x, y) => x * y;
 
                     // 4 rows across
                     products.AddRange(
                         Enumerable.Range(0, 4).Select(row =>
-                            grid4x4[row].Aggregate((x, y) => x * y)
+                            grid4x4[row].Aggregate(multiplication)
                         )
                     );
 
@@ -29,7 +30,7 @@ namespace ProjectEuler {
                         Enumerable.Range(0, 4).Select(col =>
                             Enumerable.Range(0, 4).Select(row =>
                                 grid4x4[row][col]
-                            ).Aggregate((x, y) => x * y)
+                            ).Aggregate(multiplication)
                         )
                     );
 
@@ -37,7 +38,7 @@ namespace ProjectEuler {
                     products.Add(
                         Enumerable.Range(0, 4).Select(rowCol =>
                             grid4x4[rowCol][rowCol]
-                        ).Aggregate((x, y) => x * y)
+                        ).Aggregate(multiplication)
                     );
 
                     // bottom-left to top-right diagonal
@@ -46,7 +47,7 @@ namespace ProjectEuler {
                             // col is always the absolute value of row minus 3, 
                             // it increases as row decreases
                             return grid4x4[row][Math.Abs(row - 3)];
-                        }).Aggregate((x, y) => x * y)
+                        }).Aggregate(multiplication)
                     );
 
                     return products.Max();
