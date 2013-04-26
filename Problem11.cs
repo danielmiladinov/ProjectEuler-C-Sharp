@@ -18,21 +18,17 @@ namespace ProjectEuler {
                     var products = new List<int>();
                     Func<int, int, int> multiplication = (x, y) => x * y;
 
-                    // 4 rows across
-                    products.AddRange(
-                        Enumerable.Range(0, 4).Select(row =>
-                            grid4x4[row].Aggregate(multiplication)
-                        )
-                    );
+                    Enumerable.Range(0, 4).ToList().ForEach(outer => {
+                        // 4 rows across
+                        products.Add(grid4x4[outer].Aggregate(multiplication));
 
-                    // 4 rows down
-                    products.AddRange(
-                        Enumerable.Range(0, 4).Select(col =>
-                            Enumerable.Range(0, 4).Select(row =>
-                                grid4x4[row][col]
+                        // 4 rows down
+                        products.Add(
+                            Enumerable.Range(0, 4).Select(inner =>
+                                grid4x4[inner][outer]
                             ).Aggregate(multiplication)
-                        )
-                    );
+                        );
+                    });
 
                     // top-left to bottom-right diagonal
                     products.Add(
