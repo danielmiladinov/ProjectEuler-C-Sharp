@@ -31,5 +31,22 @@ namespace Tests {
                 new object[] { 7, 28 },
             };
         }
+
+        [TestCaseSource("getSomeNumbersAndTheirExpectedNumbersOfDivisors")]
+        public void ShouldCorrectlyReturnTheNumberOfDivisorsForANumber (int n, int expectedNumberOfDivisors) {
+            Assert.AreEqual(expectedNumberOfDivisors, problem.numberOfDivisors(n));
+        }
+
+        public object[][] getSomeNumbersAndTheirExpectedNumbersOfDivisors () {
+            return new object[][] {
+                new object[] { 1, 1 },
+                new object[] { 3, 2 },
+                new object[] { 6, 4 },
+                new object[] { 10, 4 },
+                new object[] { 15, 4 },
+                new object[] { 21, 4 },
+                new object[] { 28, 6 },
+            };
+        }
     }
 }
