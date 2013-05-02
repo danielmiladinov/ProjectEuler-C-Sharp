@@ -10,7 +10,14 @@ namespace ProjectEuler {
         }
 
         public int numberOfDivisors (int n) {
-            return Enumerable.Range(1, n).Where(x => n % x == 0).Count();
+            var squareRoot = (int) Math.Sqrt(n);
+            var numberOfDivisors = Enumerable.Range(1, squareRoot).Select(x =>
+                n % x == 0 ? 2 : 0
+            ).Sum();
+            if (squareRoot * squareRoot == n) {
+                numberOfDivisors -= 1;
+            }
+            return numberOfDivisors;
         }
     }
 }

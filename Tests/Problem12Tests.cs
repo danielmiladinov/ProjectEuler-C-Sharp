@@ -46,6 +46,7 @@ namespace Tests {
                 new object[] { 15, 4 },
                 new object[] { 21, 4 },
                 new object[] { 28, 6 },
+                new object[] { 36, 9 },
             };
         }
     }
