@@ -19,5 +19,17 @@ namespace ProjectEuler {
             }
             return numberOfDivisors;
         }
+
+        public int firstTriangularNumberWithMoreDivisorsThan (int n) {
+            int i = 1, t = 0;
+            while (numberOfDivisors((t = nthTriangularNumber(++i))) < n) ;
+            return t;
+        }
+
+        private IEnumerable<int> triangularNumbers () {
+            for (int i = 1; ; i++) {
+                yield return nthTriangularNumber(i);
+            }
+        }
     }
 }

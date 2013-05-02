@@ -49,5 +49,10 @@ namespace Tests {
                 new object[] { 36, 9 },
             };
         }
+
+        [Test]
+        public void ShouldCorrectlyReturnTheFirstTriangularNumberWithMoreThanFiveHundredDivisors () {
+            Assert.AreEqual(76576500, problem.firstTriangularNumberWithMoreDivisorsThan(500));
+        }
     }
 }
