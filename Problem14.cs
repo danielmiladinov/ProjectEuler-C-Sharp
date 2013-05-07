@@ -21,5 +21,17 @@ namespace ProjectEuler {
 
             yield return 1;
         }
+
+        public long GetNumberWithLongestCollatzSequenceBelow (long limit) {
+            return Longs.Range(1, limit)
+                .ToDictionary(
+                    number => number,
+                    number => CollatzSequenceOf(number)
+                        .TakeWhile(i => i >= 1)
+                        .Count()
+                ).Aggregate((collatz1, collatz2) =>
+                    collatz2.Value > collatz1.Value ? collatz2 : collatz1
+                ).Key;
+        }
     }
 }

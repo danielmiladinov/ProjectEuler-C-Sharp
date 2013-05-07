@@ -22,5 +22,10 @@ namespace Tests {
                 problem.CollatzSequenceOf(13).TakeWhile(i => i >= 1).ToList()
             );
         }
+
+        [Test]
+        public void ShouldProduceTheNumberOneMillionOrBelowWithTheLongestCollatzSequence () {
+            Assert.AreEqual(837799, problem.GetNumberWithLongestCollatzSequenceBelow(1000000));
+        }
     }
 }
